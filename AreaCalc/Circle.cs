@@ -7,8 +7,9 @@ namespace AreaCalc
         // Radius of a circle
         private double radius;
         private double Radius {
-            get => radius; 
-            set {
+            get => radius;
+            set
+            {
                 if (value < 0)
                 {
                     throw new ArgumentException("Radius is not positive");

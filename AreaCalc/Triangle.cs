@@ -8,6 +8,7 @@ namespace AreaCalc
         public double FirstSide
         {
             get => firstSide;
+            // Setter exception is unreachable in this instance of program
             set
             {
                 if (value < 0)
@@ -23,6 +24,7 @@ namespace AreaCalc
         public double SecondSide
         {
             get => secondSide;
+            // Setter exception is unreachable in this instance of program
             set
             {
                 if (value < 0)
@@ -38,6 +40,7 @@ namespace AreaCalc
         public double ThirdSide
         {
             get => thirdSide;
+            // Setter exception is unreachable in this instance of program
             set
             {
                 if (value < 0)
