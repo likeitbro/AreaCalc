@@ -1,20 +1,23 @@
 ﻿using AreaCalc;
 
-namespace LibUser
+var shape1 = new Circle
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Shape shape1 = new Circle(10);
-            Console.WriteLine(shape1.CountArea());
+    Radius = 10,
+};
+Console.WriteLine(shape1.CalculateArea());
 
-            Shape shape2 = new Triangle(10, 5, 6);
-            Console.WriteLine(shape2.CountArea());
-            Console.WriteLine(((Triangle)shape2).isRectangular);
+var shape2 = new Triangle {
+    FirstSide = 6,
+    SecondSide = 7,
+    ThirdSide = 8,
+    };
+Console.WriteLine(shape2.CalculateArea());
+Console.WriteLine(((Triangle)shape2).isRectangular);
 
-            Triangle shape3 = new Triangle(10, 6, 8);
-            Console.WriteLine(shape3.isRectangular);
-        }
-    }
-}
+Triangle shape3 = new Triangle
+{
+    FirstSide = 6,
+    SecondSide = 8,
+    ThirdSide = 10,
+};
+Console.WriteLine(shape3.isRectangular);
