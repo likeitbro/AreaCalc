@@ -4,7 +4,6 @@ using Xunit;
 
 namespace TestProject;
 
-[TestClass]
 public class TriangleTests
 {
     [Theory]

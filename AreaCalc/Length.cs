@@ -8,23 +8,19 @@ namespace AreaCalc;
 
 public struct Length
 {
+    private double value;
     public double Value {
-        get { return Value; }
+        get { return value; }
         set
         {
             if (value < 0)
                 throw new ArgumentException("Negative length");
-            Value = value;
+            this.value = value;
         } 
     }
 
     public static implicit operator Length(double dbl)
     {
         return new Length { Value = dbl };
-    }
-
-    public static explicit operator double(Length length) 
-    { 
-        return length.Value;
     }
 }

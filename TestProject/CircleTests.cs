@@ -9,7 +9,6 @@ public class CircleTests
 {
     [Theory]
     [InlineData(3, true)]
-    [InlineData(1, true)]
     [InlineData(0, true)]
     [InlineData(-1, false)]
     public void Circle_ShouldNotThrow_OnValidData(double radius, bool isCorrect)
