@@ -4,6 +4,7 @@ using Xunit;
 
 namespace TestProject;
 
+[TestClass]
 public class TriangleTests
 {
     [Theory]
@@ -17,12 +18,7 @@ public class TriangleTests
         Triangle shape;
 
         // Act
-        var action = () => shape = new Triangle
-        {
-            FirstSide = side1,
-            SecondSide = side2,
-            ThirdSide = side3
-        };
+        var action = () => shape = new Triangle(side1, side2, side3);
 
         // Assert
         if (isCorrect)
@@ -36,12 +32,7 @@ public class TriangleTests
     public void Triangle_ShouldCalculateArea(double side1, double side2, double side3, double expected)
     {
         // Arrange
-        Triangle shape = new Triangle
-        {
-            FirstSide = 3,
-            SecondSide = 4,
-            ThirdSide = 5
-        };
+        Triangle shape = new Triangle(side1, side2, side3);
 
         //Act
 
@@ -57,12 +48,7 @@ public class TriangleTests
     public void RectTriangle_ShouldBeRect(double side1, double side2, double side3, bool expected)
     {
         // Arrange
-        Triangle shape = new Triangle
-        {
-            FirstSide = side1,
-            SecondSide = side2,
-            ThirdSide = side3
-        };
+        Triangle shape = new Triangle(side1, side2, side3);
 
         // Act
 

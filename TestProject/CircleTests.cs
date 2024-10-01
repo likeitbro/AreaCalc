@@ -4,6 +4,7 @@ using Xunit;
 
 namespace TestProject;
 
+[TestClass]
 public class CircleTests
 {
     [Theory]
@@ -17,10 +18,7 @@ public class CircleTests
         Circle shape;
 
         // Act
-        var action = () => shape = new Circle
-        {
-            Radius = radius
-        };
+        var action = () => shape = new Circle(radius);
 
         // Assert
         if (isCorrect)
@@ -31,11 +29,11 @@ public class CircleTests
 
     [Theory]
     [InlineData(0, 0)]
-    [InlineData(3, 3*3*Math.PI)]
-    public void Circle_ShouldCalculateArea(double input, double expected)
+    [InlineData(3, 9*Math.PI)]
+    public void Circle_ShouldCalculateArea(double radius, double expected)
     {
         // Arrange
-        Circle shape = new Circle { Radius = input };
+        Circle shape = new Circle(radius);
 
         // Act
 

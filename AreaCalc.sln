@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AreaCalc", "AreaCalc\AreaCa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibUser", "LibUser\LibUser.csproj", "{2E242E5D-1338-4363-8D22-3D94BAA34A50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{330FE8F4-A0E8-472D-83ED-F4FBB6769639}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject", "TestProject\TestProject.csproj", "{330FE8F4-A0E8-472D-83ED-F4FBB6769639}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -4,37 +4,34 @@ namespace AreaCalc;
 
 public sealed class Triangle: IAreaCalculatable
 {
-    public required double FirstSide { get; init; }
-    public required double SecondSide { get; init; }
-    public required double ThirdSide { get; init; }
+    public Length FirstSide { get; init; }
+    public Length SecondSide { get; init; }
+    public Length ThirdSide { get; init; }
 
-    // Check whether triangle is rectangular
-    public bool isRectangular;
-
-    //public Triangle(double FirstSide, double SecondSide, double ThirdSide)
-    //{
-    //    CheckExists();
-    //    isRectangular 
-    //}
+    public Triangle(Length firstSide, Length secondSide, Length thirdSide)
+    {
+        FirstSide = firstSide;
+        SecondSide = secondSide;
+        ThirdSide = thirdSide;
+        CheckExists(firstSide.Value, secondSide.Value, thirdSide.Value);
+    }
 
     public double CalculateArea()
     {
-        double semiPerimeter = (FirstSide + SecondSide + ThirdSide) / 2;
-        return Math.Sqrt(semiPerimeter * (semiPerimeter - FirstSide) * (semiPerimeter - SecondSide) * (semiPerimeter - ThirdSide));
+        double semiPerimeter = (FirstSide.Value + SecondSide.Value + ThirdSide.Value) / 2;
+        return Math.Sqrt(semiPerimeter * (semiPerimeter - FirstSide.Value) * (semiPerimeter - SecondSide.Value) * (semiPerimeter - ThirdSide.Value));
     }
 
-    private bool CheckRectangular()
-    {
-        return FirstSide * FirstSide + SecondSide * SecondSide == ThirdSide * ThirdSide ||
-               FirstSide * FirstSide + ThirdSide * ThirdSide == SecondSide * SecondSide ||
-               SecondSide * SecondSide + ThirdSide * ThirdSide == FirstSide * FirstSide;
-    }
+    public bool isRectangular => 
+        FirstSide.Value * FirstSide.Value + SecondSide.Value * SecondSide.Value == ThirdSide.Value * ThirdSide.Value ||
+        FirstSide.Value * FirstSide.Value + ThirdSide.Value * ThirdSide.Value == SecondSide.Value * SecondSide.Value ||
+        SecondSide.Value * SecondSide.Value + ThirdSide.Value * ThirdSide.Value == FirstSide.Value * FirstSide.Value;
 
-    private void CheckExists()
+    private void CheckExists(double firstSide, double secondSide, double thirdSide)
     {
-        if (((FirstSide + SecondSide) < ThirdSide) ||
-            ((FirstSide + ThirdSide) < SecondSide) ||
-            ((SecondSide + ThirdSide) < FirstSide))
+        if (((firstSide + secondSide) < thirdSide) ||
+            ((firstSide + thirdSide) < secondSide) ||
+            ((secondSide + thirdSide) < firstSide))
             throw new ArgumentException("Unable to make a triange with given sides");
     }
 }
