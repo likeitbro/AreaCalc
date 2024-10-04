@@ -10,10 +10,10 @@ public sealed class Triangle: IAreaCalculatable
 
     public Triangle(Length firstSide, Length secondSide, Length thirdSide)
     {
+        CheckExists(firstSide.Value, secondSide.Value, thirdSide.Value);
         FirstSide = firstSide;
         SecondSide = secondSide;
         ThirdSide = thirdSide;
-        CheckExists(firstSide.Value, secondSide.Value, thirdSide.Value);
     }
 
     public double CalculateArea()
